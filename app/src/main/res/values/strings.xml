@@ -28,8 +28,8 @@
     <string name="empty_password">Password is empty</string>
     <string name="empty_email">Email is empty</string>
     <string name="shoe_name_empty">Shoe name must be filled</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor ac sem eget placerat. Quisque pellentesque facilisis odio, vitae tempor nibh tempor in. Nulla aliquam metus lectus, eget sodales orci suscipit scelerisque. In quis eros eu velit tempor tincidunt sit amet a purus. Phasellus dignissim, arcu ac placerat euismod, massa orci maximus nisl, blandit fringilla massa mi ultrices lorem. Aliquam accumsan, nunc vitae fringilla convallis, nisl felis consectetur justo, volutpat facilisis purus ligula tincidunt ligula. Nam pulvinar mauris at lorem imperdiet, quis tincidunt est consectetur. Suspendisse rhoncus cursus nibh, eu viverra elit vulputate et. Quisque ut leo quis justo consequat tincidunt. Nullam eu sem facilisis, mollis enim id, vulputate diam. Mauris posuere arcu vel justo laoreet consectetur. Mauris at justo elit.</string>
-    <string name="creator">Created by Samuel Gunawan</string>
+    <string name="about_content">This project was completed by myself. I use library in this project: TedImagePicker (https://github.com/ParkSangGwon/TedImagePicker).</string>
+    <string name="creator">By Samuel Gunawan (samuelgunawan@mail.com)</string>
     <string name="no_shoe">No Shoe. Please add new shoe by tapping (+) button.</string>
     <string name="login">LOGIN</string>
     <string name="welcome">WELCOME</string>
