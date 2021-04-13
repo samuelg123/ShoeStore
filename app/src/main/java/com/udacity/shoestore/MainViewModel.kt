@@ -5,11 +5,15 @@ import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.udacity.shoestore.features.login.User
 import com.udacity.shoestore.features.shoe.Shoe
 import gun0912.tedimagepicker.builder.TedImagePicker
-import timber.log.Timber
 
 class MainViewModel : ViewModel() {
+    private val _user: MutableLiveData<User> = MutableLiveData()
+    val user: MutableLiveData<User>
+        get() = _user
+
     private val _shoe: MutableLiveData<Shoe> = MutableLiveData()
     val shoe: MutableLiveData<Shoe>
         get() = _shoe

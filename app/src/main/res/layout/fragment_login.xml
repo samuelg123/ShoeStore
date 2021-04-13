@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Note:
+I choose ConstraintLayout because I need to use layout_constraintWidth_max & layout_constraintWidth_percent property,
+so the view width can be adjusted depends on the device width.
+-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="fragment"
+            type="com.udacity.shoestore.features.login.LoginFragment" />
 
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,93 +24,96 @@
         android:background="@color/colorPrimary"
         tools:context=".features.login.LoginFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <EditText
+            android:id="@+id/email_edit"
+            style="@style/LoginEditTextStyle"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/title_space"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:autofillHints="Email"
+            android:drawableStart="@drawable/ic_email"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:text="@={viewModel.user.email}"
+            app:layout_constraintBottom_toTopOf="@+id/password_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_title_text"
+            app:layout_constraintWidth_max="300dp"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <EditText
+            android:id="@+id/password_edit"
+            style="@style/LoginEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:autofillHints="Password"
+            android:drawableStart="@drawable/ic_password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.user.password}"
+            app:layout_constraintBottom_toTopOf="@+id/login_existing_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_edit"
+            app:layout_constraintWidth_max="300dp"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:id="@+id/app_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:fontFamily="@font/bungee_inline"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/email_edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintWidth_max="300dp"
-            app:layout_constraintWidth_percent="0.8">
+            app:layout_constraintWidth_percent="0.8" />
 
-            <EditText
-                android:id="@+id/email_edit"
-                style="@style/LoginEditTextStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/title_space"
-                android:layout_marginBottom="@dimen/small_padding"
-                android:autofillHints="Email"
-                android:drawableStart="@drawable/ic_email"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toTopOf="@+id/password_edit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/app_title_text" />
+        <Button
+            android:id="@+id/login_existing_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:onClick="@{()->fragment.submit()}"
+            android:padding="@dimen/default_padding"
+            android:text="@string/login_existing_account"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/new_login_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_edit"
+            app:layout_constraintWidth_max="300dp"
+            app:layout_constraintWidth_percent="0.8" />
 
-            <EditText
-                android:id="@+id/password_edit"
-                style="@style/LoginEditTextStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_padding"
-                android:layout_marginBottom="@dimen/large_margin"
-                android:autofillHints="Password"
-                android:drawableStart="@drawable/ic_password"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                app:layout_constraintBottom_toTopOf="@+id/login_existing_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_edit" />
-
-            <TextView
-                android:id="@+id/app_title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:fontFamily="@font/bungee_inline"
-                android:text="@string/app_name"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/title_text_size"
-                app:layout_constraintBottom_toTopOf="@+id/email_edit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
-
-            <Button
-                android:id="@+id/login_existing_button"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:padding="@dimen/default_padding"
-                android:text="@string/login_existing_account"
-                android:textColor="@android:color/white"
-                app:backgroundTint="@android:color/transparent"
-                app:layout_constraintBottom_toTopOf="@+id/new_login_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_edit" />
-
-            <Button
-                android:id="@+id/new_login_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_margin"
-                android:layout_marginBottom="@dimen/large_margin"
-                android:background="@color/colorAccent"
-                android:text="@string/new_login"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_existing_button" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/new_login_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:background="@color/colorAccent"
+            android:onClick="@{()->fragment.submit()}"
+            android:text="@string/new_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_existing_button"
+            app:layout_constraintWidth_max="300dp"
+            app:layout_constraintWidth_percent="0.8" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Note:
+I choose ConstraintLayout because I need to use layout_constraintVertical_bias & layout_constraintWidth_max property,
+so the view width can be adjusted both position and its width depends on the screen size.
+-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
