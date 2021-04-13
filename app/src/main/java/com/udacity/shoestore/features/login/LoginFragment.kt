@@ -30,6 +30,8 @@ class LoginFragment : Fragment() {
         binding.fragment = this
         binding.viewModel = viewModel
 
+        viewModel.user.value = User()
+
         return binding.root
     }
 
