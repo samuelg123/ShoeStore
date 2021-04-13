@@ -14,10 +14,8 @@ class AboutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         val binding: FragmentAboutBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_about, container, false)
-//        return inflater.inflate(R.layout.fragment_about, container, false)
         return binding.root
     }
 }

@@ -62,13 +62,6 @@ class LoginFragment : Fragment() {
             }
         }
 
-//        val listener = Navigation.createNavigateOnClickListener(
-//            if(binding.emailEdit.text.toString().isEmailValid){
-//
-//            }
-//            LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
-//        )
-
         binding.loginExistingButton.setOnClickListener(listener)
         binding.newLoginButton.setOnClickListener(listener)
     }

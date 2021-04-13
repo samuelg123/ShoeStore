@@ -32,11 +32,5 @@ class InstructionFragment : Fragment() {
                 InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment()
             )
         )
-//
-//        binding.nextButton.setOnClickListener {
-//
-//
-//
-//        }
     }
 }
