@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_existing_account">Login Existing Account</string>
+    <string name="new_login">New Login</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="next">Next</string>
+    <string name="instructions">Instructions</string>
+    <string name="instructions_content">"1. On the shoe list, tap one of the pictures do you like.\n2. The shoe detail will appear, and you can scroll down to see the detail."</string>
+    <string name="shoe_image">Shoe Image</string>
+    <string name="shoe_images">Shoe Images</string>
+    <string name="no_image">No Image</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="company">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="logout">LOGOUT</string>
+    <string name="about">ABOUT</string>
+    <string name="shoe_list">SHOE LIST</string>
+    <string name="shoe_detail">SHOE DETAIL</string>
+    <string name="change_image">Change Image</string>
+    <string name="incorrect_email">Incorrect email</string>
+    <string name="empty_password">Password is empty</string>
+    <string name="empty_email">Email is empty</string>
+    <string name="shoe_name_empty">Shoe name must be filled</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor ac sem eget placerat. Quisque pellentesque facilisis odio, vitae tempor nibh tempor in. Nulla aliquam metus lectus, eget sodales orci suscipit scelerisque. In quis eros eu velit tempor tincidunt sit amet a purus. Phasellus dignissim, arcu ac placerat euismod, massa orci maximus nisl, blandit fringilla massa mi ultrices lorem. Aliquam accumsan, nunc vitae fringilla convallis, nisl felis consectetur justo, volutpat facilisis purus ligula tincidunt ligula. Nam pulvinar mauris at lorem imperdiet, quis tincidunt est consectetur. Suspendisse rhoncus cursus nibh, eu viverra elit vulputate et. Quisque ut leo quis justo consequat tincidunt. Nullam eu sem facilisis, mollis enim id, vulputate diam. Mauris posuere arcu vel justo laoreet consectetur. Mauris at justo elit.</string>
+    <string name="creator">Created by Samuel Gunawan</string>
+    <string name="no_shoe">No Shoe. Please add new shoe by tapping (+) button.</string>
+    <string name="login">LOGIN</string>
+    <string name="welcome">WELCOME</string>
+    <string name="instruction">INSTRUCTION</string>
+</resources>

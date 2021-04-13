@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/default_padding">
+
+    <ImageView
+        android:id="@+id/shoe_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@android:color/darker_gray"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/shoe_image" />
+
+    <android.widget.Space
+        android:layout_width="@dimen/default_margin"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/shoe_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_gravity="center_vertical"
+        tools:text="Shoe / Boots ABC"
+        style="@style/ItemTextStyle" />
+</LinearLayout>
