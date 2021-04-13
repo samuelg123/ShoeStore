@@ -10,7 +10,7 @@ import com.udacity.shoestore.features.shoe.Shoe
 import gun0912.tedimagepicker.builder.TedImagePicker
 
 class MainViewModel : ViewModel() {
-    private val _user: MutableLiveData<User> = MutableLiveData()
+    private val _user: MutableLiveData<User> = MutableLiveData(User())
     val user: MutableLiveData<User>
         get() = _user
 
@@ -19,30 +19,30 @@ class MainViewModel : ViewModel() {
         get() = _shoe
 
     val shoeSize =
-        object : ObservableField<String?>(shoe.value?.size?.toString()) {
-            override fun set(value: String?) {
-                super.set(value)
-                shoe.value = shoe.value?.copy(size = value?.toDoubleOrNull())
+            object : ObservableField<String?>(shoe.value?.size?.toString()) {
+                override fun set(value: String?) {
+                    super.set(value)
+                    shoe.value = shoe.value?.copy(size = value?.toDoubleOrNull())
+                }
             }
-        }
 
     private val _shoeList: MutableList<Shoe> = mutableListOf()
     private val _shoeListLiveData: MutableLiveData<List<Shoe>> =
-        MutableLiveData()
+            MutableLiveData()
 
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeListLiveData
 
     fun setImage(context: Context) {
         TedImagePicker.with(context)
-            .startMultiImage { uriList ->
-                _shoe.value = (_shoe.value ?: Shoe()).apply {
-                    images.apply {
-                        clear()
-                        addAll(uriList)
+                .startMultiImage { uriList ->
+                    _shoe.value = (_shoe.value ?: Shoe()).apply {
+                        images.apply {
+                            clear()
+                            addAll(uriList)
+                        }
                     }
                 }
-            }
     }
 
     fun saveShoe(update: Boolean): Boolean {
@@ -67,5 +67,9 @@ class MainViewModel : ViewModel() {
             _shoeList[idx] = updateShoe
         }
         _shoeListLiveData.value = _shoeList
+    }
+
+    fun onLogout() {
+        _user.value = User()
     }
 }
